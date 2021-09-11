@@ -80,6 +80,6 @@ func main() {
 	port := os.Getenv("PORT")
 
 	// router.Run("localhost:1907")
-	log.Fatal(http.ListenAndServe(port, handler))
+	log.Fatal(http.ListenAndServe(":"+port, handler))
 	router.Run()
 }
