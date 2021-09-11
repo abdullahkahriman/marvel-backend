@@ -76,6 +76,6 @@ func main() {
 	handler := c.Handler(router)
 
 	// router.Run("localhost:1907")
-	log.Fatal(http.ListenAndServe(":1907", handler))
+	log.Fatal(http.ListenAndServe(":80", handler))
 	router.Run()
 }
