@@ -72,7 +72,7 @@ func main() {
 	router.GET("/api/characters/:page", getCharacters)
 
 	c := cors.New(cors.Options{
-		AllowedOrigins:   []string{"http://localhost:4200"},
+		AllowedOrigins:   []string{"*"},
 		AllowCredentials: true,
 	})
 	handler := c.Handler(router)
