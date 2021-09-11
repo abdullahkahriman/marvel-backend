@@ -7,6 +7,8 @@ import (
 	"log"
 	"net/http"
 
+	"os"
+
 	"github.com/gin-gonic/gin"
 	"github.com/rs/cors"
 )
@@ -75,7 +77,9 @@ func main() {
 	})
 	handler := c.Handler(router)
 
+	port := os.Getenv("PORT")
+
 	// router.Run("localhost:1907")
-	log.Fatal(http.ListenAndServe(":3000", handler))
+	log.Fatal(http.ListenAndServe(port, handler))
 	router.Run()
 }
